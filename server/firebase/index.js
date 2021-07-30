@@ -11,20 +11,23 @@ const adminAccount = initializeApp({
 
 const db = getFirestore(adminAccount);
 
-db.collection("users2").doc("todos").update({
-	8: "test again",
+//create a collection in cloud firestore
+db.collection("Testing").doc("Stacks").set({
+	Platform: "Firebase",
+	Services: "Auth / Firestore / Storage",
 });
 
-db.collection("users2")
-	.doc("todos")
+//read the collection programatically
+db.collection("Testing")
+	.doc("Stacks")
 	.get()
-	.then((res) => console.log("docs from FB Firestore-->", res.data()));
+	.then((res) => console.table(res.data()))
+	.catch((err) => console.log("Error->", err));
 
-db.collection("images")
-	.get()
-	.then((res) =>
-		// res.forEach((doc) =>
-		// 	console.log("gteiing docs from images collection-->", doc.data())
-		// )
-		console.log("res->", res)
-	);
+//update
+db.collection("Testing").doc("Stacks").update({
+	otherStacks: "NodeJs",
+});
+
+//delete operations
+db.collection("Testing").doc("Stacks").delete();
