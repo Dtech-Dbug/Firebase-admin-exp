@@ -37,7 +37,11 @@ const adminAccount = initializeApp({
 const u_id = "some-uid";
 
 getAuth()
-	.createUser()
+	.createUser({
+		name: "Dee",
+		email: "Dee@Dee.com",
+		address: "India",
+	})
 	.then((res) => {
 		console.log("resposen from custom token", res);
 	})
