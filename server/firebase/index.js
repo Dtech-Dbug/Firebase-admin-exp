@@ -35,6 +35,10 @@ const adminAccount = initializeApp({
 
 //create custom token
 const u_id = "some-uid";
+// getAuth().createCustomToken('Hmm').then(res=> console.log('res->', res))
+
+
+//create user
 
 // getAuth()
 // 	.createUser({
@@ -47,10 +51,10 @@ const u_id = "some-uid";
 // 	})
 // 	.catch((err) => console.log("Error->", err));
 
-const uid = 'mpgYXxv3f5VCNwldHiywIsB6LQl1'
+
 
 getAuth().createUser({
-	name : 'hello'
+	name : 'helloWorld',
+	email : 'hello@world.com'
 }).then(res=> console.log('USer creatd with ID->' , res))
 
-getAuth().createCustomToken('Hmm').then(res=> console.log('res->', res))
