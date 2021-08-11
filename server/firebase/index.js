@@ -54,7 +54,7 @@ const u_id = "some-uid";
 
 
 getAuth().createUser({
-	name : 'helloWorld',
-	email : 'hello@world.com'
-}).then(res=> console.log('USer creatd with ID->' , res))
+	name : 'helloWorld2',
+	email : 'hello2@world.com'
+}).then(res=> console.log('USer creatd with ID->' , res.email))
 
