@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dee": "nodemon server"
+		"dee": "nodemon firebase"
 	},
 	"keywords": [],
 	"author": "",
