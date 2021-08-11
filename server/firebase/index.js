@@ -2,7 +2,7 @@ const admin = require("firebase-admin");
 const { credential } = admin;
 const { initializeApp } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
-const { getAuth } = require("firebase-admin/auth");
+const { getAuth , Auth } = require("firebase-admin/auth");
 
 var serviceAccount = require("./serviceAccountConfigKey.json");
 
@@ -36,13 +36,21 @@ const adminAccount = initializeApp({
 //create custom token
 const u_id = "some-uid";
 
-getAuth()
-	.createUser({
-		name: "Dee",
-		email: "Dee@Dee.com",
-		address: "India",
-	})
-	.then((res) => {
-		console.log("resposen from custom token", res);
-	})
-	.catch((err) => console.log("Error->", err));
+// getAuth()
+// 	.createUser({
+// 		name: "Dee",
+// 		email: "Dee@Dee.com",
+// 		address: "India",
+// 	})
+// 	.then((res) => {
+// 		console.log("resposen from custom token", res);
+// 	})
+// 	.catch((err) => console.log("Error->", err));
+
+const uid = 'mpgYXxv3f5VCNwldHiywIsB6LQl1'
+
+getAuth().createUser({
+	name : 'hello'
+}).then(res=> console.log('USer creatd with ID->' , res))
+
+getAuth().createCustomToken('Hmm').then(res=> console.log('res->', res))
